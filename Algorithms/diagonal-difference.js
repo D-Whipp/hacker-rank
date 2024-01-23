@@ -26,10 +26,33 @@ let matrixFour = [
 
 let matrixFive = [
     [5, 5, 5, 5, 5],
-    [5, 5, 5, 5, 5],
-    [5, 5, 5, 5, 5],
-    [5, 5, 5, 5, 5],
-    [5, 5, 5, 5, 5],
+    [5, -5, 5, -5, 5],
+    [5, 5, -5, 5, 5],
+    [5, -5, 5, 5, 5],
+    [-5, 5, 5, 5, 5],
+];
+
+let impossibleArr = [
+    [64, -83, -92, -87, -99, -13, 30, 100, -78, 16],
+    [1, 83, 29, -68, -100, -12, 81],
+    [
+        4, -4, -64, 57, 64, 91, 61, -14, -51, 36, 70, -80, 55, -20,
+        -64, 71, -62, 88, 84, -5, 51, -15, -6, -99, -45, 97,
+    ],
+    [4, -81, -72, -74, 50, 3, 44, 8, 44, 17, 38, -90, -41],
+    [100, -75, -99, -95, -52, 68],
+    [
+        79, 92, 44, -5, 42, 7, -100, -35, -73, 46, -61, 96, 98, -94,
+        83, 49, 77, 5, 66, -1, -36, -91, 82, -61, -45, -38, -72, -16,
+        83, -5, -70, 17, 57, -18, -8, 9, 67, 18, 54, 14, -38,
+    ],
+    [81, -72, -74, 50, 3, 44, 8, 44, 17, 38],
+    [
+        4, 59, 70, 21, -66, -29, 7, 3, 91, -75, 86, 48, 39, 46, 26,
+        33, -62, -45, -94, 74, -59, -70, -92, -72, -75, 7, 16, -86,
+        -58, 49, -42, 100, -97, -36, 18, -17, -44, -36, -20, -2,
+    ],
+    [-10, 1, 4, -6, 18, -9, -4, -7, 1],
 ];
 
 let matrixBroken = [
@@ -49,6 +72,7 @@ function diagonalDifference(arr) {
 }
 
 function matrixIteration(arr) {
+    parseInt(arr);
     let firstArrSum = 0;
     let secondArrSum = 0;
 
@@ -56,12 +80,12 @@ function matrixIteration(arr) {
         firstArrSum += arr[i][i];
     }
 
-    const reverseArr = arr.reverse();
+    const reverseArr = parseInt(arr.reverse());
 
     for (let j = 0; j < reverseArr.length; j++) {
         secondArrSum += reverseArr[j][j];
     }
-    console.log(firstArrSum + secondArrSum);
+    console.log(Math.abs(firstArrSum + secondArrSum));
 }
 
-matrixIteration(matrixBroken);
+matrixIteration(impossibleArr);
